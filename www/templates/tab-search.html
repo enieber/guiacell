@@ -1,0 +1,47 @@
+<ion-view view-title="Guia Cell">
+  <ion-content ng-controller="SearchCtrl">
+
+    <div class="row responsive-sm">
+      <div class="col">
+        Buscando: {{typeSearch}}
+      </div>
+    </div>
+
+    <div class="padding">
+      <form>
+        <select ng-model="nomeCidade" ng-change="mudouCidade()">
+          <option ng-if="item.city != 'GERAL - MT'" value="{{ item.city }}" ng-selected="{{ itemCity == item.city }}" ng-repeat="item in cities">{{ item.city }}</option>
+        </select>
+
+        <label class="item item-input inputSearch">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" ng-model="word" placeholder="Oque deseja buscar?">
+        </label>
+
+        <button class="button button-search button-full" ng-click="btnSearch()">
+          Buscar
+        </button>
+      </form>
+    </div>
+
+    <div class="row responsive-sm" hide-on-keyboard-open>
+      <div class="col">
+        <ion-slide-box auto-play="true" does-continue="true" show-pager="false" slide-interval="2000">
+            <ion-slide ng-repeat="item in searchBanners">
+              <img ng-cache ng-src="http://www.guiaempresarialnorte.com.br/{{ item[0].path }}" style="width:100%;margin:auto;display:block">
+            </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <!-- <ion-footer-bar ng-controller="bannerCapa" ng-show="bannerConnection" align-title="left" class="footer-bar-banner hide-on-keyboard-open">
+    <ion-slide-box auto-play="true" does-continue="true" show-pager="false" slide-interval="2000">
+        <ion-slide ng-repeat="item in searchBanners">
+          <img ng-cache ng-src="http://www.guiaempresarialnorte.com.br/{{ item[0].path }}" style="width:100%;height:100%;margin:auto;display:block">
+        </ion-slide>
+    </ion-slide-box>
+  </ion-footer-bar> -->
+
+</ion-view>

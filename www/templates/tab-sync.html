@@ -1,0 +1,39 @@
+<ion-view view-title="Offline">
+  <ion-content overflow-scroll="true">
+
+
+    <div ng-if="message" class="padding">
+      {{ message }} {{ progressbar }}
+    </div>
+
+    <ion-list>
+        <button class="button button-assertive" style="width: 100%" ng-click="deleteRegisters()">Limpar Offline</button>
+
+        <div class="item item-text-wrap">
+          Clique na cidade que deseja baixar ou remover do seu telefone, as cidades marcadas ficam disponíveis para buscas sem internet.
+        </div>
+
+      <!-- <div class="item item-divider">
+        <p>Clique na cidade que deseja baixar.</p>
+      </div> -->
+      <ion-checkbox ng-if="item.city != 'GERAL - MT'" ng-checked="(item.id == listCheckout{{item.id}})?true:false;" ng-click="btnSync('insert', item.id, item.city)" ng-repeat="item in cities">
+        {{item.city}}
+      </ion-checkbox>
+
+    </ion-list>
+
+    <div class="spinner-view" ng-show="spinner">
+      <ion-spinner icon="spiral"></ion-spinner>
+      <span>Aguarde carregando..</span>
+    </div>
+
+    <div class="padding" ng-show="connectionInfo" class="connectionInfo">
+      <p>
+      Você está sem conexão com a internet.
+      <br>
+      Quando se conectar à internet e sincronize a cidade que mais utiliza para poder usar o aplicativo quando estiver sem conexão.
+      </p>
+    </div>
+
+  </ion-content>
+</ion-view>

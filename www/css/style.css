@@ -1,0 +1,163 @@
+/*
+  Personalização Tabs
+*/
+
+.bar.bar-stable {
+  background-color: #1668c3;
+}
+.bar.bar-stable .title {
+  color: #fff;
+}
+.tabs-striped .tabs {
+  background-color: #1668c3;
+}
+.tabs {
+  background-color: #1668c3;
+}
+
+i, .tab-title {
+  color: #fff;
+}
+
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+  border-color: #c87b18;
+}
+
+.has-footer {
+    bottom: 85px;
+}
+.bar-footer {
+  bottom: 0;
+  border-top-width: 1px;
+  border-bottom-width: 0;
+  background-position: top;
+  height: 100px;
+}
+.footer-bar-banner {
+  border-top: none;
+  background-color: #1668c3;
+}
+
+
+/*
+  Select
+*/
+.typeSearch {
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #e8e8e8;
+}
+select {
+  float: left;
+  width: 100%;
+  padding: 15px 10px;
+  background: #f6f6f6;
+  border: 1px solid #e8e8e8;
+  color: #333;
+}
+.inputSearch {
+  margin-top: 5px;
+  background: #f6f6f6;
+}
+
+.button-search {
+  margin-top: 15px;
+  color: #fff;
+  background: #18c88c;
+}
+
+
+
+/*
+  Resultado da Busca
+*/
+.searchResul {
+  display: table;
+  width: 100%;
+  padding: 10px;
+  background: #f6f6f6;
+}
+.searchResul:nth-child(odd) {
+  background: #fff;
+}
+.searchResul .title {
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.phone-itens {
+  display: table;
+  width: 100%;
+  padding: 8px 0;
+}
+.phone-itens a {
+  float: left;
+  width: 50%;
+  padding: 3px 0;
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+}
+.icon-phone {
+  color: #333;
+}
+.searchResul .info {
+  width: 100%;
+  padding: 4px 0;
+}
+.searchResul .info a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+}
+.searchResul .info .icon-link {
+  width: 32%;
+  text-align: center;
+  font-size: 28px;
+}
+
+
+.pago {
+  background: #1ad394;
+}
+.pago .title {
+  font-size: 20px;
+}
+
+.pago:nth-child(odd){
+  background: #16bf85;
+}
+
+.pago .phone-itens a {
+  font-size: 18px;
+  color: #fff;
+}
+.pago .phone-itens a .icon-phone {
+  color: #fff;
+  font-size: 20px;
+}
+.pago .title {
+  padding-bottom: 5px;
+  font-size: 22px;
+  color: #fff;
+}
+.pago .info a {
+  font-size: 16px;
+  color: #fff;
+}
+
+
+
+.connectionInfo {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.connectionInfo > .ion-alert-circled {
+  float: left;
+  font-size: 36px;
+}
+.connectionInfo p {
+  float: left;
+  text-align: justify;
+  font-size: 24px;
+}

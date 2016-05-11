@@ -1,0 +1,86 @@
+<ion-view view-title="{{searchTerm}}">
+  <ion-content overflow-scroll="true">
+
+    <div ng-show="searchOnline">
+
+      <div class="searchResul pago" ng-if="item.advertiser == true || item.advertiser == 'true'" ng-repeat="item in searchResul">
+        <div class="title">{{ item.company }}</div>
+
+          <div class="phone-itens">
+            <a href="tel:{{phone.phone|formatE164}}" ng-repeat="phone in item.phoneCollection">
+              <i ng-if="phone.isWhatsApp == true" class="icon-phone ion-social-whatsapp-outline"></i>
+              <i ng-if="phone.isWhatsApp == false" class="icon-phone ion-ios-telephone"></i>
+              {{phone.phone|tel}}
+            </a>
+          </div>
+
+          <div class="info">
+            <a class="icon-link" ng-if="item.email" href="mailto:{{item.email}}"><i class="ion-email"></i></a>
+            <a class="icon-link" ng-if="item.website"  href="#" ng-click="openBrowser(item.website)"><i class="ion-social-chrome"></i></a>
+            <a class="icon-link" ng-if="item.facebook" href="#" ng-click="openBrowser(item.facebook)"><i class="ion-social-facebook"></i></a>
+          </div>
+
+      </div>
+
+      <div class="searchResul" ng-if="item.advertiser == false || item.advertiser == 'false'" ng-repeat="item in searchResul">
+        <div class="title">{{ item.company }}</div>
+
+        <div class="phone-itens">
+          <a href="tel:{{phone.phone|formatE164}}" ng-repeat="phone in item.phoneCollection">
+            <i ng-if="phone.isWhatsApp == true" class="icon-phone ion-social-whatsapp-outline"></i>
+            <i ng-if="phone.isWhatsApp == false" class="icon-phone ion-ios-telephone"></i>
+            {{phone.phone|tel}}
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div ng-show="searchOffline">
+
+      <div class="searchResul pago" ng-if="item.advertiser == true || item.advertiser == 'true'" ng-repeat="item in searchResul">
+        <div class="title">{{ item.company }}</div>
+
+        <div class="phone-itens">
+          <a href="tel:{{phone|formatE164}}" ng-repeat="(key, phone) in item.phones | split track by $index">
+
+            <span ng-if="keyWhatsapp == key" ng-repeat="(keyWhatsapp, icon) in item.whatsapp | split track by $index">
+              <i ng-if="icon == 'true'" class="icon-phone ion-social-whatsapp-outline"></i>
+              <i ng-if="icon == 'false'" class="icon-phone ion-ios-telephone"></i>
+            </span>
+
+            {{phone|tel}}
+          </a>
+        </div>
+
+        <div class="info">
+          <a class="icon-link" ng-if="item.email"    href="mailto:{{item.email}}"><i class="ion-email"></i></a>
+          <a class="icon-link" ng-if="item.website"  href="{{item.website}}"><i class="ion-social-chrome"></i></a>
+          <a class="icon-link" ng-if="item.facebook" href="{{item.facebook}}"><i class="ion-social-facebook"></i></a>
+        </div>
+
+      </div>
+
+      <div class="searchResul" ng-if="item.advertiser == false || item.advertiser == 'false'" ng-repeat="item in searchResul">
+        <div class="title">{{ item.company }}</div>
+
+        <div class="phone-itens">
+          <a href="tel:{{phone|formatE164}}" ng-repeat="(key, phone) in item.phones | split track by $index">
+            {{phone|tel}}
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+<div class="footer-bar-banner bar bar-footer" ng-show="bannerResul">
+    <ion-slide-box auto-play="true" does-continue="true" show-pager="false" slide-interval="2000">
+        <ion-slide ng-repeat="item in searchBanners">
+          <img ng-cache ng-src="http://www.guiaempresarialnorte.com.br/{{ item[0].path }}" style="width:100%;margin:auto;display:block">
+        </ion-slide>
+    </ion-slide-box>
+</div>
+
+</ion-view>
