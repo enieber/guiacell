@@ -27,7 +27,7 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="android-minSdkVersion" value="15"/>
   <preference name="android-installLocation" value="auto"/>
-  <preference name="phonegap-version" value="cli-6.2.2"/>
+  <preference name="phonegap-version" value="cli-6.1.0"/>
   <preference name="orientation" value="portrait"/>
   <preference name="splashscreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
